@@ -11,7 +11,7 @@ test('Test Case 9: Search Product',async ({page}) => {
   await page.getByRole('button', { name: '' }).click();
   await expect(page.getByRole('heading', { name: 'Searched Products' })).toBeVisible();
   await expect(page.locator('p').filter({ hasText: /^Men Tshirt$/ })).toBeVisible();
-  await expect(page.locator('p').filter({ hasText: /^Men Tshirt$/ })).toBeVisible();
+  //await expect(page.locator('p').filter({ hasText: /^Men Tshirt$/ })).toBeVisible();
 
   // ---------------------
  
