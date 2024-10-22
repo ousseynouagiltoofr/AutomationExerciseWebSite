@@ -6,7 +6,7 @@ test('Test Case 2: Login User with correct email and password', async ({page}) =
       await expect(page.getByRole('link', { name: ' Home' })).toBeVisible();
       await page.getByRole('link', { name: ' Signup / Login' }).click();
       await page.locator('form').filter({ hasText: 'Login' }).getByPlaceholder('Email Address').click();
-      await page.locator('form').filter({ hasText: 'Login' }).getByPlaceholder('Email Address').fill('elhadjiousseynou.diop95@gmail.com');
+      await page.locator('form').filter({ hasText: 'Login' }).getByPlaceholder('Email Address').fill('elhadjiousseynou.diop95@yopmail.com');
       await page.getByPlaceholder('Password').click();
       await page.getByPlaceholder('Password').press('CapsLock');
       await page.getByPlaceholder('Password').fill('P');
