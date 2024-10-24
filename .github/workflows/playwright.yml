@@ -6,7 +6,7 @@ on:
     branches: [ main, master ]
 jobs:
   test:
-    timeout-minutes: 60
+   # timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -17,11 +17,20 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: Run Playwright tests
-      run: npx playwright test
-    - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
+
+
+        
+    - name: Run Playwright tests with Allure Report 
+      run: npm run test:allure
+
+    - name: Upload Allure results 
+      uses: actions/upload-artifact@v4 
       with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
+        name: allure-report
+        path: allure-report  
+
+    - name: Deploy Allure Report to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }} 
+        publish_dir: ./allure-report 
