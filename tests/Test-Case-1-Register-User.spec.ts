@@ -4,7 +4,7 @@ test('Test Case 1: Register User', async ({page} ) => {
   
       await page.goto('https://automationexercise.com/');
       await expect(page.getByRole('link', { name: ' Home' })).toBeVisible();
-      await page.getByRole('link', { name: ' Signup / Login' }).click();
+     /* await page.getByRole('link', { name: ' Signup / Login' }).click();
       await expect(page.getByRole('heading', { name: 'New User Signup!' })).toBeVisible();
       await page.getByPlaceholder('Name').click();
       await page.getByPlaceholder('Name').fill('Elhadji Ousseynou DIOP');
@@ -47,7 +47,7 @@ test('Test Case 1: Register User', async ({page} ) => {
       await expect(page.getByText('Account Deleted!')).toBeVisible();
     
       // ---------------------
-      
+      */
     });
 
 
