@@ -9,7 +9,7 @@ test('Test Case 1: Register User', async ({page} ) => {
       await page.getByPlaceholder('Name').click();
       await page.getByPlaceholder('Name').fill('Elhadji Ousseynou DIOP');
       await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').click();
-      await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').fill('elhadjiousseynou.diop1995@gmail.com');
+      await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').fill('elhadjiousseynou.diop19955@gmail.com');
       await page.getByRole('button', { name: 'Signup' }).click();
       await expect(page.getByText('Enter Account Information')).toBeVisible();
       await page.getByLabel('Mr.').check();
