@@ -9,9 +9,9 @@ test('Test Case 5: Register User with existing email', async ({page}) => {
   await page.getByPlaceholder('Name').click();
   await page.getByPlaceholder('Name').fill('Elhadji Ousseynou DIOP');
   await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').click();
-  await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').fill('elhadjiousseynou.diop95@gmail.com');
+  await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').fill('elhadjiousseynou.diop95@yopmail.com');
   await page.getByRole('button', { name: 'Signup' }).click();
-//await expect(page.getByText('Email Address already exist!')).toBeVisible();
+  await expect(page.getByText('Email Address already exist!')).toBeVisible();
 
   // ---------------------
  
